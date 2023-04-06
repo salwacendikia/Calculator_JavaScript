@@ -1,9 +1,9 @@
-//SCREEN------------------------------------------------------------------------
+//SCREEN--------------------------------------------------------------------------------
 
-//(memanggil element yang ada pada class calculator-screen)
+//(mengambil element <input> yang ada pada class calculator-screen)
 const calculatorScreen = document.querySelector(".calculator-screen");
 
-//(merubah angka yang ditampilkan dengan mengganti nilai atribut value pada tag input)
+//(merubah angka yang ditampilkan dengan memperbarui nilai atribut value pada <input>)
 const updateScreen = (number) => {
     calculatorScreen.value = number;
 };
@@ -11,14 +11,14 @@ const updateScreen = (number) => {
 
 //BUTTON NUMBER------------------------------------------------------------------------
 
-//(memanggil element yang ada pada class number)
+//(mengambil element <button>  yang ada pada class number)
 const numbers = document.querySelectorAll(".number");
 
 //(mengambil setiap element array numbers)
 numbers.forEach((number) => {
-    //(menentukan aksi pada saat tombol number diklik)
+    //(menambahkan click event/menentukan aksi pada saat tombol number diklik)
     number.addEventListener("click", (e) => {
-        inputNumber(e.target.value); 
+        inputNumber(e.target.value);  //(e.target.value untuk mengakses nilai atribut value pada <button>)
         updateScreen(currentNumber);
     })
 })
@@ -42,19 +42,19 @@ const inputNumber = (number) => {
 
 //BUTTON OPERATOR------------------------------------------------------------------------
 
-//(memanggil element yang ada pada class operator)
+//(mengambil element <button> yang ada pada class operator)
 const operators = document.querySelectorAll(".operator");
 
 //(mengambil setiap element array operators)
 operators.forEach((operator) => {
     //(menentukan aksi pada saat tombol operator diklik)
     operator.addEventListener("click", (e) => {
-        inputOperator(e.target.value)
+        inputOperator(e.target.value);
     })
 })
 
 
-//FUNCTION INPUT OPERATOR------------------------------------------------------------------------
+//FUNCTION INPUT OPERATOR----------------------------------------------------------------
 
 //(membuat variabel prevNumber/number sebelumnya)
 let prevNumber = "";
@@ -74,7 +74,7 @@ const inputOperator = (operator) => {
 
 //BUTTON EQUAL SIGN------------------------------------------------------------------------
 
-//(memanggil elemen yang ada pada class equal-sign)
+//(mengambil elemen <button> yang ada pada class equal-sign)
 const equalSign = document.querySelector(".equal-sign");
 
 //(menentukan aksi pada saat tombol sama dengan diklik)
@@ -111,9 +111,9 @@ const calculate = () => {
 }
 
 
-//BUTTON AC------------------------------------------------------------------------
+//BUTTON AC--------------------------------------------------------------------------------
 
-//(memanggil elemen yang ada pada class all-clear)
+//(mengambil elemen <button> yang ada pada class all-clear)
 const clearButton = document.querySelector(".all-clear");
 
 //(menentukan aksi pada saat tombol AC diklik)
@@ -132,9 +132,9 @@ const clearAll = () => {
 }
 
 
-//BUTTON DECIMAL------------------------------------------------------------------------
+//BUTTON DECIMAL---------------------------------------------------------------------------
 
-//(memanggil elemen yang ada pada class decimal)
+//(mengambil elemen <button> yang ada pada class decimal)
 const decimal = document.querySelector(".decimal");
 
 //(menentukan aksi pada saat tombol decimal diklik)
@@ -144,7 +144,7 @@ decimal.addEventListener("click", (e) => {
 })
 
 
-//FUNCTION DECIMAL------------------------------------------------------------------------
+//FUNCTION DECIMAL-------------------------------------------------------------------------
 const inputDecimal = (dot) => {
     if (currentNumber.includes(".")) {
         return;
@@ -153,9 +153,9 @@ const inputDecimal = (dot) => {
 }
 
 
-//BUTTON & FUNCTION PRECENTAGE------------------------------------------------------------------------
+//BUTTON & FUNCTION PRECENTAGE---------------------------------------------------------------
 
-//(memanggil elemen yang ada pada class precentage)
+//(mengambil elemen <button> yang ada pada class precentage)
 const precentage = document.querySelector(".precentage");
 
 //(menentukan aksi/fungsi pada saat tombol persen diklik)
